@@ -24,28 +24,48 @@
             <li>
                 <a href="./home.html">Home</a>
             </li>
-            <li class="dropdown">Account
+            <li class="dropdown" class="button-active">
+                <a href="#">Account</a>
                 <ul class="dropdown-items">
                     <li>
                         <a href="./login.html">Login</a>
                     </li>
                     <li>
-                        <a href="./register.html">Register</a>
+                        <a href="./register.html" class="button-active">Register</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="" disabled="disabled">Order</a>
+                <a href="#" disabled="disabled">Schedule</a>
+            </li>
+            <li>
+                <a href="#">Order</a>
             </li>
         </ul>
     </nav>
 
 
     <main>
-        <h3>Make your new MyTutor account</h3>
+        <h3>Register your new <span class="myTutor"><b><i>MyTutor</i></b></span> account</h3>
         <div class="card">
             <form action="./profile.html">
                 <table>
+                    <tr>
+                        <td>
+                            <label for="">Name:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="" id="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="">Phone:</label>
+                        </td>
+                        <td>
+                            <input type="text" name="" id="">
+                        </td>
+                    </tr>
                     <tr>
                         <td>
                             <label for="">Email:</label>
@@ -65,6 +85,14 @@
                             
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+                            <label for="">Address:</label>
+                        </td>
+                        <td>
+                            <textarea name="address" id="" cols="20" rows="5"></textarea>
+                        </td>
+                    </tr>
     
                 </table>
                     <center>
@@ -76,9 +104,14 @@
 
 
     <footer>
-        <center>
+        
+        <center class="copyright">
+            
             Copyright &copy; Joerio Christo Chandra (702302)
         </center>
+
+        
+        
     </footer>
 </body>
 </html>

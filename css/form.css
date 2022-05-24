@@ -3,6 +3,9 @@ main{
     align-items: center;
     flex-direction: column;
 }
+main p{
+    font-size:18px;
+}
 
 .card{
     background-color: blueviolet;
@@ -12,9 +15,18 @@ main{
     margin:4px;
     display:flex;
     justify-content: center;
+    box-shadow: 8px 8px 4px 0px rgba(0, 0, 0, 0.3);
 }
 table{
     color:whitesmoke;
+}
+table tr td{
+    padding:3px;
+}
+textarea{
+    min-width: 190px;
+    max-width:190px;
+    min-height:80px;
 }
 .form-button{
     margin-top:10px;
@@ -27,4 +39,9 @@ table{
     font-size:16px;
     border-radius:6px;
     cursor:pointer;
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.6);
+    transition: 0.2s ease-in-out;
+}
+.form-button:hover{
+    box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.3);
 }
