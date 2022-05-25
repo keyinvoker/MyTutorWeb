@@ -78,6 +78,13 @@ nav > ul > li > a:hover{
     font-weight:bold;
 }
 
+.dropdown-items a.button-active{
+    border:none;
+}
+.dropdown-items a.button-active:hover{
+    color:purple;
+}
+
 main{
     min-height:70vh;
     padding:30px;
