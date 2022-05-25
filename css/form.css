@@ -10,24 +10,35 @@ main p{
 .card{
     background-color: blueviolet;
     border-radius: 90px 5px 90px 5px;
-    width: 400px;
-    padding:14px;
+    width: 460px;
+    padding:20px;
     margin:4px;
     display:flex;
     justify-content: center;
-    box-shadow: 8px 8px 4px 0px rgba(0, 0, 0, 0.3);
+    box-shadow: 8px 8px 4px rgba(0, 0, 0, 0.3);
 }
 table{
     color:whitesmoke;
 }
 table tr td{
-    padding:3px;
+    padding:8px;
+    vertical-align: top;
+}
+
+input, textarea{
+    height:20px;
+    min-width: 200px;
+    max-width:200px;
+    padding:4px 8px;
+    outline:none;
 }
 textarea{
-    min-width: 190px;
-    max-width:190px;
     min-height:80px;
 }
+input:focus, textarea:focus{
+    outline: 1px solid black;
+}
+
 .form-button{
     margin-top:10px;
     background-color: purple;

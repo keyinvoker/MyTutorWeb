@@ -102,7 +102,7 @@ main{
 
 footer{
     position:sticky;
-    background-color: blueviolet;
+    background-color: rgb(40,40,40);
     color:whitesmoke;
     font-size: 12px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -134,5 +134,8 @@ footer{
 
 .copyright{
     padding:8px;
-    background-color: rgb(40,40,40);
+    background-color: black;
+    display:flex;
+    justify-content: center;
+    color:whitesmoke;
 }
