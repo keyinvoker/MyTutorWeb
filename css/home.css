@@ -10,7 +10,7 @@
     color:whitesmoke;
 }
 .about-text-card{
-    height:60%;
+    height:fit-content;
     background-color: rgb(255, 209, 220);
     padding:10px 20px 10px 20px;
     border-radius: 0 25px 25px 25px;

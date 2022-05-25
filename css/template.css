@@ -20,12 +20,17 @@ header{
     margin:10px;
 }
 
+a{
+    text-decoration: none;
+    color:whitesmoke;
+}
 
 nav{
     background-color: rgba(128, 0, 128,50%);
-    padding:8px;
+    padding:15px 0;
     display:flex;
     justify-content: center;
+    height:fit-content;
 }
 nav ul{
     display:flex;
@@ -35,19 +40,28 @@ nav ul{
 nav > ul > li{
     margin-left:15px;
     margin-right:15px;
+}
+nav > ul > li > a{
+    padding:4px 12px;
     border: 1px solid whitesmoke;
-    padding: 3px 10px 3px 10px;
+    transition: 0.3s ease-out;
+}
+nav > ul > li > a:hover{
+    color:rgb(60,60,60);
+    border: 1px solid rgb(60,60,60);
 }
 .dropdown-items{
     display:none;
     position:absolute;
     z-index: 1;
     background-color: violet;
-    padding:0;
+    min-width:80px;
     padding: 3px 10px 3px 10px;
 }
 .dropdown-items a{
     display: block;
+    padding: 4px;
+    transition: 0.5s ease-in-out;
 }
 .dropdown-items a:hover{
     background-color: whitesmoke;
@@ -56,13 +70,16 @@ nav > ul > li{
 .dropdown:hover .dropdown-items{
     display: block;
 }
-a{
-    text-decoration: none;
-    color:whitesmoke;
+
+.button-active, .button-active:hover{
+    color:purple;
+    border:2px solid purple;
+    transition:0;
+    font-weight:bold;
 }
 
 main{
-    height:70vh;
+    min-height:70vh;
     padding:30px;
     display:flex;
     background-color: whitesmoke;
