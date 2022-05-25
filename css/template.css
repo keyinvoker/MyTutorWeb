@@ -102,12 +102,37 @@ main{
 
 footer{
     position:sticky;
-    background-color: rgba(0,0,0,0.9);
+    background-color: blueviolet;
     color:whitesmoke;
-    padding:8px;
     font-size: 12px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    width:100%;
 }
+
+.footer-info{
+    padding:12px 8px 8px 8px;
+    display:grid;
+    justify-content: center;
+    grid-template-columns: auto auto;
+    
+}
+.joerio img{
+    width:120px;
+    border-radius:20px;
+}
+.socmed-card{
+    display:inline-grid;
+}
+.socmed{
+    display:inline-grid;
+    align-items: center;
+}
+.socmed img{
+    width:26px;
+    margin-left:8px;
+}
+
 .copyright{
-    text-align: center;
+    padding:8px;
+    background-color: rgb(40,40,40);
 }
