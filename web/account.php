@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-// if (!isset($_SESSION['email'])) {
-//     echo "<script>alert('You currently not logged in')";
-//     header("Location: ./login.php");
-// }
+if (!isset($_SESSION['email'])) {
+    echo "<script>alert('You are currently not logged in')";
+    header("Location: ./login.php");
+}
 ?>
 
 <!DOCTYPE html>

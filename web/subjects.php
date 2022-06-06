@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +9,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/template.css">
     <link rel="stylesheet" href="../css/database.css">
     <link rel="icon" href="../assets/images/sleepy-office-worker.png">
@@ -48,7 +53,7 @@
                     ID
                 </th>
                 <th>
-                    Image
+                    Thumbnail
                 </th>
                 <th>
                     Subject
@@ -57,7 +62,7 @@
                     Description
                 </th>
                 <th>
-                    Price
+                    Price (MYR)
                 </th>
                 <th>
                     Tutor
@@ -65,15 +70,20 @@
             </tr>
 
             <?php
-            include_once('../php/dbconnect.php');
-            $query = "SELECT *
-                      FROM tbl_subjects ts
-                      JOIN tbl_tutors tt
-                      ON tt.tutor_id = ts.tutor_id
-                      ";
-            $queryResult = $conn->query($query);
+            include('../php/dbconnect.php');
 
-            while ($rows = mysqli_fetch_assoc($queryResult)) {
+            $limit = 10;
+            $page = (isset($_GET['page']) && is_numeric($_GET['page'])) ? $_GET['page'] : 1;
+            $pageStart = ($page - 1) * $limit;
+            $query = "SELECT * FROM tbl_subjects ts JOIN tbl_tutors tt ON tt.tutor_id = ts.tutor_id LIMIT $pageStart, $limit";
+            $result = $conn->query($query);
+            $sql = $conn->query("SELECT count(subject_id) AS id FROM tbl_subjects")->fetch_assoc();
+            $allRecords = $sql['id'];
+            $totalPages = ceil($allRecords / $limit);
+            $prev = $page - 1;
+            $next = $page + 1;
+
+            while ($rows = mysqli_fetch_assoc($result)) {
                 echo '
                 <tr>
                     <td>'
@@ -100,6 +110,43 @@
             }
             ?>
         </table>
+
+        <!-- <nav aria-label="...">
+            <ul class="pagination">
+                <li class="page-item disabled">
+                    <a class="page-link">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+                <li class="page-item" aria-current="page">
+                    <a class="page-link" href="?page=2">2</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="#">Next</a>
+                </li>
+            </ul>
+        </nav> -->
+
+        <nav>
+            <ul class="pagination">
+                <li><a class="page-link" href="<?php if ($page <= 1) {
+                                                    echo '#';
+                                                } else {
+                                                    echo " ?page=" . $prev;
+                                                } ?>">Prev</a>
+                </li>
+                <?php for ($a = 1; $a <= $totalPages; $a++) : ?>
+                    <li><a class="page-link" href="subjects.php?page=<?= $a; ?>"><?= $a; ?></a>
+                    </li>
+                <?php endfor; ?>
+                <li><a class="page-link" href="<?php if ($page >= $totalPages) {
+                                                    echo '#';
+                                                } else {
+                                                    echo " ?page=" . $next;
+                                                } ?>">Next</a>
+                </li>
+            </ul>
+        </nav>
+
     </main>
 
 
