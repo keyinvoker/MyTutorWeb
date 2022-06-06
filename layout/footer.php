@@ -1,7 +1,9 @@
 <footer>
     <div class="footer-info">
         <div class="joerio">
-            <img src="../assets/images/joerio.jpg" alt="">
+            <a href="https://youtu.be/dQw4w9WgXcQ" target="_blank">
+                <img src="../assets/images/joerio.jpg" alt="">
+            </a>
         </div>
 
         <div class="socmed-card">

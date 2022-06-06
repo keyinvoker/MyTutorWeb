@@ -109,14 +109,14 @@ footer{
 }
 
 .footer-info{
-    padding:12px 8px 8px 8px;
+    padding:10px 8px 8px 8px;
     display:grid;
     justify-content: center;
     grid-template-columns: auto auto;
     
 }
 .joerio img{
-    width:120px;
+    width:80px;
     border-radius:20px;
 }
 .socmed-card{
