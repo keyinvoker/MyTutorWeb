@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (isset($_SESSION['email'])) {
+    header('Location: ./home.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,31 +15,22 @@
     <link rel="stylesheet" href="../css/template.css">
     <link rel="stylesheet" href="../css/form.css">
     <link rel="icon" href="../assets/images/sleepy-office-worker.png">
-    <title>MyTutor</title>
+    <title>MyTutor Register</title>
 </head>
 
 <body>
 
-    <header>
-        <div class="header-text">
-            <h2><i>Welcome to</i></h2>
-            <img class="header-logo" src="../assets/images/sleepy-office-worker.png" alt="">
-            <a href="./home.html">
-                <h2><span><i>MyTutor</i></span></h2>
-            </a>
-        </div>
-    </header>
-
+    <?php include '../layout/header.php' ?>
     <nav>
         <ul>
             <li>
-                <a href="./home.html">Home</a>
+                <a href="./home.php">Home</a>
             </li>
-            <li class="dropdown" class="button-active">
-                <a href="#">Account</a>
+            <li class="dropdown">
+                <a href="./account.php" class="button-active">Account</a>
                 <ul class="dropdown-items">
                     <li>
-                        <a href="./login.html">Login</a>
+                        <a href="./login.php">Login</a>
                     </li>
                     <li>
                         <a href="./register.php" class="button-active">Register</a>
@@ -40,7 +38,7 @@
                 </ul>
             </li>
             <li>
-                <a href="#" disabled="disabled">Schedule</a>
+                <a href="#">Schedule</a>
             </li>
             <li>
                 <a href="#">Order</a>
@@ -84,7 +82,7 @@
                             <label for="">Password:</label>
                         </td>
                         <td>
-                            <input type="password" name="password" id="password" placeholder="Min. 8 characters">
+                            <input type="password" name="password" id="password" placeholder="min. 8 characters">
                         </td>
                     </tr>
                     <tr>
@@ -112,18 +110,20 @@
                             <input type="file" name="image" id="image">
                         </td>
                     </tr>
-
                 </table>
                 <center>
                     <button class="form-button" type="submit">REGISTER</button>
                 </center>
+                <div clas="text-attention">
+                    Already have an account? <a href="./login.php">Login</a>
+                </div>
 
                 <div>
 
                     <?php
                     if (isset($GET['errorMsg'])) {
                         $error = $_GET['errorMsg'];
-                        echo '<p class="error"> ERROR: ', $error, '</p>';
+                        echo 'alert("ERROR: ' . $error . '")';
                     }
                     ?>
 
@@ -135,31 +135,7 @@
     </main>
 
 
-    <footer>
-        <div class="footer-info">
-            <div class="joerio">
-                <img src="../assets/images/joerio.jpg" alt="">
-            </div>
-
-            <div class="socmed-card">
-                <div class="socmed">
-                    <a href="https://instagram.com/joer.io" target="_blank">
-                        <img src="../assets/images/instagram.png" alt="INSTAGRAM">
-                    </a>
-                    <a href="https://linkedin.com/in/joerio-christo-chandra-707a051b9/" target="_blank">
-                        <img src="../assets/images/linkedin.png" alt="LinkedIn">
-                    </a>
-                    <a href="https://github.com/keyinvoker" target="_blank">
-                        <img src="../assets/images/github.png" alt="GitHub">
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="copyright">
-            Copyright &copy; 2022 Joerio Christo Chandra (702302)
-        </div>
-    </footer>
+    <?php include '../layout/footer.php' ?>
 </body>
 
 </html>

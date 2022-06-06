@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,26 +10,20 @@
     <link rel="icon" href="../assets/images/sleepy-office-worker.png">
     <title>MyTutor</title>
 </head>
+
 <body>
-    
-    <header>
-        <div class="header-text">
-            <h2><i>Welcome to</i></h2>
-            <img class="header-logo" src="../assets/images/sleepy-office-worker.png" alt="">
-            <a href="./home.html"><h2><span><i>MyTutor</i></span></h2></a>
-        </div>
-    </header>
-    
+
+    <?php include '../layout/header.php' ?>
     <nav>
         <ul>
             <li>
-                <a href="./home.html" class="button-active">Home</a>
+                <a href="./home.php" class="button-active">Home</a>
             </li>
             <li class="dropdown">
-                <a href="#">Account</a>
+                <a href="./account.php">Account</a>
                 <ul class="dropdown-items">
                     <li>
-                        <a href="./login.html">Login</a>
+                        <a href="./login.php">Login</a>
                     </li>
                     <li>
                         <a href="./register.php">Register</a>
@@ -36,15 +31,13 @@
                 </ul>
             </li>
             <li>
-                <a href="#"">Schedule</a>
+                <a href="#">Schedule</a>
             </li>
             <li>
                 <a href="#">Order</a>
             </li>
         </ul>
     </nav>
-
-
 
     <main>
         <div class="about-card">
@@ -67,36 +60,13 @@
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi odio corporis perspiciatis? Cupiditate, dignissimos quo fuga iure temporibus molestias voluptatem dicta aut nostrum adipisci tenetur, nemo nobis iusto est minus!
                     </p>
                 </div>
-            </div> 
+            </div>
         </div>
     </main>
 
+    <?php include '../layout/footer.php' ?>
 
-    <footer>
-        <div class="footer-info">
-            <div class="joerio">
-                <img src="../assets/images/joerio.jpg" alt="">
-            </div>
-
-            <div class="socmed-card">
-                <div class="socmed">
-                    <a href="https://instagram.com/joer.io" target="_blank">
-                        <img src="../assets/images/instagram.png" alt="INSTAGRAM">
-                    </a>
-                    <a href="https://linkedin.com/in/joerio-christo-chandra-707a051b9/" target="_blank">
-                        <img src="../assets/images/linkedin.png" alt="LinkedIn">
-                    </a>
-                    <a href="https://github.com/keyinvoker" target="_blank">
-                        <img src="../assets/images/github.png" alt="GitHub">
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="copyright">
-                Copyright &copy; 2022 Joerio Christo Chandra (702302)
-        </div>
-    </footer>
 
 </body>
+
 </html>

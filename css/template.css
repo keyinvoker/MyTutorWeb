@@ -91,7 +91,6 @@ main{
     display:flex;
     background-color: whitesmoke;
     background-image: url("../assets/images/work-desk.png");
-    
     background-repeat: no-repeat;
     background-position: center bottom;
 }
