@@ -9,7 +9,7 @@ if (!isset($_POST)) {
 
     $email = $_POST['email'];
     $password = hash('sha256', $_POST['password']);
-    $password = $_POST['password'];
+    // $password = sha1($_POST['password']);
     $sqllogin = "SELECT * FROM `users` WHERE `email` = '$email' AND `password` = '$password'";
     $result = $conn->query($sqllogin);
     $numrow = $result->num_rows;

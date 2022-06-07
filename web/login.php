@@ -72,17 +72,26 @@ if (isset($_SESSION['email'])) {
                             <input type="password" name="password" id="password">
                         </td>
                     </tr>
+                    <tr>
+                        <td>
+
+                            <input type="checkbox" value="lsRememberMe" id="rememberMe">
+                        </td>
+                        <td>
+                            <label for="rememberMe">Remember me</label>
+                        </td>
+                    </tr>
 
                 </table>
                 <center>
-                    <input type="checkbox" value="lsRememberMe" id="rememberMe"> <label for="rememberMe">Remember me</label>
                     <button class="form-button" type="submit" onclick="lsRememberMe()">LOGIN</button>
+                    <div class="text-attention">
+                        <!-- Forgot password? <a href="#">Get help</a>
+                        <br> -->
+                        <br>
+                        Do not have an account? <a href="./register.php">Register</a>
+                    </div>
                 </center>
-                <div class="text-attention">
-                    Forgot password? <a href="./forgot.php">Get help</a>
-                    <br>
-                    Do not have an account? <a href="./register.php">Register</a>
-                </div>
             </form>
         </div>
     </main>

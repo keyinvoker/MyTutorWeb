@@ -1,6 +1,5 @@
 <?php
 if (isset($_POST)) {
-    $response = array('status' => 'failed', 'data' => null);
 
     include_once("dbconnect.php");
     session_start();
@@ -12,10 +11,9 @@ if (isset($_POST)) {
     $name = addslashes($_POST['name']);
     $address = addslashes($_POST['address']);
     $image = $_FILES['image']['name'];
+    $base64image = $_POST['image'];
     $msg;
 
-
-    // validation
     if (empty($email) || empty($password) || empty($password2) || empty($phone) || empty($name) || empty($address) || empty($image)) {
         $msg = 'Fill in all the fields!';
     } else if (strlen($password) < 8) {
@@ -26,25 +24,18 @@ if (isset($_POST)) {
         $msg = 'Please enter a valid mobile phone number!';
     } else {
 
-        // validation: succesful!
-
         $password = hash('sha256', $password);
-        $sqlinsert = "INSERT INTO `users`(`email`, `password`, `name`, `phone`, `address`, `image`) VALUES ('$email','$password','$name','$phone', '$address', '$image')";
+        $sqlinsert = "INSERT INTO `users`(`email`, `password`, `name`, `phone`, `address`) VALUES ('$email','$password','$name','$phone', '$address')";
 
         if ($conn->query($sqlinsert) === TRUE) {
-            $response = array('status' => 'success', 'data' => null);
             $filename = mysqli_insert_id($conn);
             $decoded_string = base64_decode($base64image);
-            // $imagetitle = $filename . '.png';
-            // $path = '../assets/profiles/' . $imagetitle;
-            $path = '../assets/profiles/' . $filename . '.png';
+            $path = '../assets/profiles/' . $filename . '.jpg';
             $is_written = file_put_contents($path, $decoded_string);
-
-            // $sqlinsertimage = "INSERT INTO `users`('image`) VALUES (`$imagetitle`)";
-            // $conn->query($sqlinsertimage);
-            header('Location: ../web/home.php');
+            echo "<script>alert('Successfully logged in!')</script>";
+            header('Location: ../web/login.php');
         } else {
-            $response = array('status' => 'failed', 'data' => null);
+            echo "<script>alert('You're a failure')</script>";
             header('Location: ../web/register.php');
         }
     }
