@@ -41,10 +41,10 @@ if (isset($_SESSION['email'])) {
                 </ul>
             </li>
             <li>
-                <a href="#">Schedule</a>
+                <a href="./tutors.php">Tutors</a>
             </li>
             <li>
-                <a href="#">Order</a>
+                <a href="./subjects.php">Subjects</a>
             </li>
         </ul>
     </nav>

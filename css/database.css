@@ -47,10 +47,11 @@ th:not(:first-child){
 }
 
 .img-db{
-    height:90px;
+    width:90px;
 }
 
 .cell-tutor{
+    padding:0;
     display:flex;
     flex-direction: column;
     align-items: center;

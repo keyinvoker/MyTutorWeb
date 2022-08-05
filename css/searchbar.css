@@ -1,0 +1,16 @@
+.searchbar{
+    display:flex
+}
+
+.searchbar-input { 
+    width: 100%;
+}
+
+.searchbar-btn{
+    border: none;
+    margin-left: 6px;
+}
+
+.searchbar-btn-img{
+    width:30px;
+}
